@@ -7,11 +7,15 @@ health = 100
 inventory = []
 
 # Function to print text with a pause
+
+
 def print_pause(text):
     print(text)
     time.sleep(1)
 
 # Function to print text with a delayed effect for each character
+
+
 def print_delayed(text, delay=0.1):
     for char in text:
         print(char, end='', flush=True)
@@ -19,14 +23,20 @@ def print_delayed(text, delay=0.1):
     print()
 
 # Function to check and display the player's current score
+
+
 def check_score():
     print_pause(f"Your current score: {score}")
 
 # Function to check and display the player's current health
+
+
 def check_health():
     print_pause(f"Your current health: {health}")
 
 # Function to check and display the player's inventory
+
+
 def check_inventory():
     if inventory:
         print("You have the following items:")
@@ -36,6 +46,8 @@ def check_inventory():
         print("Your inventory is empty.")
 
 # Main function for choices at the village entrance
+
+
 def village_entrance():
     print("\nWhat do you want to do now?")
     print("1. Go into the Forest")
@@ -65,6 +77,8 @@ def village_entrance():
         village_entrance()
 
 # Function for the forest scenario
+
+
 def forest():
     print_delayed("You are walking in the forest, it's mysterious and dark.")
     scenario = random.choice([
@@ -114,6 +128,8 @@ def forest():
         village_entrance()
 
 # Function to handle fighting a beast
+
+
 def fight_beast():
     global score, health
     print_delayed("\nYou fight the beast bravely and defeat it!")
@@ -129,6 +145,8 @@ def fight_beast():
         village_entrance()
 
 # Function to handle finding a hidden path
+
+
 def hidden_path():
     global score
     print_delayed("\nYou follow the hidden path and find a treasure chest!")
@@ -140,6 +158,8 @@ def hidden_path():
     village_entrance()
 
 # Function to handle finding treasure in the forest
+
+
 def find_treasure():
     global score
     print_delayed("\nYou stumble upon a hidden treasure chest in the forest!")
@@ -150,6 +170,8 @@ def find_treasure():
     village_entrance()
 
 # Function to handle meeting a wise old man in the forest
+
+
 def meet_wise_old_man():
     global health
     print_delayed("\nYou meet a wise old man in the forest.")
@@ -169,6 +191,8 @@ def meet_wise_old_man():
         meet_wise_old_man()
 
 # Function to handle encountering a mysterious tree
+
+
 def mysterious_tree():
     global score
     print_delayed("\nYou come across a mysterious tree with strange carvings.")
@@ -178,6 +202,8 @@ def mysterious_tree():
     village_entrance()
 
 # Function for the mountains scenario
+
+
 def mountains():
     global score, health
     print_delayed("\nYou climb the rocky mountains and find a cave entrance.")
@@ -216,6 +242,8 @@ def mountains():
         enter_cave()
 
 # Function to handle entering the cave
+
+
 def enter_cave():
     print_delayed("\nYou enter the dark cave.")
     print_delayed("You can hear the monster's roars.")
@@ -229,6 +257,8 @@ def enter_cave():
         explore_further()
 
 # Function to handle encountering a monster in the cave
+
+
 def encounter_monster():
     global score
     print_delayed("\nSuddenly, a monstrous figure emerges from the shadows!")
@@ -246,6 +276,8 @@ def encounter_monster():
         game_over()
 
 # Function to handle collecting treasure in the cave
+
+
 def collect_treasure():
     global score
     print_delayed("\nYou find a hidden chest filled with glittering treasure!")
@@ -256,6 +288,8 @@ def collect_treasure():
     mountains()
 
 # Function to explore further in the cave
+
+
 def explore_further():
     print_delayed("\nThe cave is very quiet. You find nothing of interest.")
     action = input("Do you want to 1. explore or 2. return to the village: ")
@@ -266,6 +300,8 @@ def explore_further():
         village_entrance()
 
 # Function to handle finding healing herbs in the mountains
+
+
 def find_healing_herbs():
     global health
     print_delayed("\nYou find some healing herbs growing in a crevice.")
@@ -275,6 +311,8 @@ def find_healing_herbs():
     village_entrance()
 
 # Function to handle encountering bandits in the mountains
+
+
 def encounter_bandits():
     global health
     print_delayed("\nYou encounter a group of bandits in the mountains.")
@@ -290,7 +328,8 @@ def encounter_bandits():
             score += 20
             print(f"You gain 20 points! Current score: {score}")
         else:
-            print_delayed("\nYou fight bravely, but the bandits overpower you.")
+            print_delayed(
+                "\nYou fight bravely, but the bandits overpower you.")
             health -= 30
             print(f"You lose 30 health points. Current health: {health}")
             if health <= 0:
@@ -300,6 +339,8 @@ def encounter_bandits():
         village_entrance()
 
 # Function to handle finding ancient ruins in the mountains
+
+
 def find_ancient_ruines():
     global score
     print_delayed("\nYou find ancient ruins hidden in the mountains.")
@@ -310,6 +351,8 @@ def find_ancient_ruines():
     village_entrance()
 
 # Function for the river scenario
+
+
 def river():
     global score
     print_delayed("\nYou follow the path down to the river.")
@@ -325,9 +368,12 @@ def river():
         village_entrance()
 
 # Function to handle diving into the river
+
+
 def dive_in_river():
     global health, score
-    print_delayed("\nYou dive into the river and struggle against the current.")
+    print_delayed(
+        "\nYou dive into the river and struggle against the current.")
     find = random.choice(["gem", "nothing", "drown"])
     if find == "gem":
         print_delayed("\nYou find a sparkling gem in the water!")
@@ -339,10 +385,13 @@ def dive_in_river():
         print_delayed("\nYou search the water but find nothing of value.")
         village_entrance()
     elif find == "drown":
-        print_delayed("\nThe current is too strong! You're swept away and drown.")
+        print_delayed(
+            "\nThe current is too strong! You're swept away and drown.")
         game_over()
 
 # Function for the abandoned house scenario
+
+
 def abandoned_house():
     global score
     print_delayed("\nYou approach the abandoned house.")
@@ -363,6 +412,8 @@ def abandoned_house():
         village_entrance()
 
 # Function to handle a ghost encounter
+
+
 def ghost_encounter():
     global score, health
     print_delayed("\nThe ghost shrieks and lunges at you!")
@@ -386,6 +437,8 @@ def ghost_encounter():
         village_entrance()
 
 # Function to handle the game over scenario
+
+
 def game_over():
     print_delayed("\nYou've been defeated.")
     print_delayed("\nGAME OVER!")
@@ -397,6 +450,8 @@ def game_over():
         exit()
 
 # Function to handle the winning scenario
+
+
 def game_over_win():
     print_delayed("\nYou've defeated the monster and saved the village!")
     print_delayed("\nCONGRATULATIONS!")
@@ -408,6 +463,8 @@ def game_over_win():
         exit()
 
 # Function to reset the game
+
+
 def reset_game():
     global score, health, inventory
     score = 0
@@ -416,11 +473,15 @@ def reset_game():
     village_entrance()
 
 # Start the game
+
+
 def start_game():
     print_delayed("\nWelcome to the Adventure Game!")
-    print_delayed("Your mission is to defeat the monster and save the village.")
+    print_delayed(
+        "Your mission is to defeat the monster and save the village.")
     print_pause("\nGood luck, hero!")
     village_entrance()
+
 
 # Start the game by calling the start_game function
 start_game()
